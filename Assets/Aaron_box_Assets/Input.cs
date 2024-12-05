@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Input : MonoBehaviour
 {
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("test");
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            Debug.Log("hello");
+        }
         
+
+
+
     }
 }
