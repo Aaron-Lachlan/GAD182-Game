@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(Vector3.back * Time.deltaTime * LRSpeed);
             }
 
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 transform.Translate(Vector3.back * Time.deltaTime * LRSpeed * -1);
             }
@@ -41,6 +41,6 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Vector3.forward * Time.deltaTime * forwardSpeed, Space.World);
         }
-        controller.Move(direction*Time.deltaTime);
+        //controller.Move(direction*Time.deltaTime);
     }
 }
