@@ -9,6 +9,7 @@ public class ObstacleCollision : MonoBehaviour
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         thePlayer.GetComponent<PlayerController>().enabled = false;
+        PlayerController.canMove = false;
         Debug.Log("Loss");
     }
     

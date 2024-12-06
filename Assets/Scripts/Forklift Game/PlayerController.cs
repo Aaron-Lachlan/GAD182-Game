@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -26,12 +27,18 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Translate(Vector3.back * Time.deltaTime * LRSpeed);
+                if(this.gameObject.transform.position.x > ForkliftGameManger.leftSide)
+                {
+                    transform.Translate(Vector3.up * Time.deltaTime * LRSpeed);
+                }
             }
 
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Translate(Vector3.back * Time.deltaTime * LRSpeed * -1);
+                if(this.gameObject.transform.position.x < ForkliftGameManger.rightSide)
+                {
+                    transform.Translate(Vector3.up * Time.deltaTime * LRSpeed * -1);
+                }
             }
         }
     }
