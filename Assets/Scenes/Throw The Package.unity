@@ -262,11 +262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68bb7784e98e6904089080bc8c9a716f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.464
+      value: 0.595
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68bb7784e98e6904089080bc8c9a716f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.542
+      value: 2.354
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68bb7784e98e6904089080bc8c9a716f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1404,7 +1404,6 @@ MonoBehaviour:
   boxes:
   - {fileID: 255798050}
   - {fileID: 1515928750}
-  - {fileID: 1576054808}
   scoreDisplay: {fileID: 1966733378}
   spawnLocation: {fileID: 101840716}
   playerScore: 0
@@ -2126,7 +2125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68bb7784e98e6904089080bc8c9a716f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.197
+      value: 1.799
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68bb7784e98e6904089080bc8c9a716f, type: 3}
       propertyPath: m_LocalPosition.z
