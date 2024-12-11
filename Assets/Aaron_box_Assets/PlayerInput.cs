@@ -14,28 +14,30 @@ public class PlayerInput : MonoBehaviour
     private float SoundPitch = 1.0f;
     public AudioSource Sound;
 
-    public TextMeshProUGUI Text;
+    //text Shake
+    //public TextMeshProUGUI Text;
+    public Transform Text;
     private Vector3 initialPosition;
-    private Vector3 directionOfShake;
-    public float amplitude = 1.0f;
-    public float frequency = 1.0f; 
+    private Vector3 directionOfShake = Vector3.up;
+    private float amplitude = 0.01f;
+    private int frequency = 2;
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 directionOfShake = transform.forward;
+        
         ProgressBar.value = count;
 
-        initialPosition = Text.transform.position;
-}
-    void FixedUpdate()
-    {
-        Text.transform.position = initialPosition + directionOfShake * (-amplitude + Mathf.PingPong(frequency * Time.fixedDeltaTime, 2f * amplitude));
+        initialPosition = Text.position;
+
     }
+  
 
     // Update is called once per frame
     void Update()
     {
+
+        Text.position = initialPosition + directionOfShake * Mathf.PingPong(Time.time * frequency, amplitude * 2f);
         if (Input.GetKeyDown(KeyCode.Space) == true)
         {
             Pressed();
@@ -46,10 +48,14 @@ public class PlayerInput : MonoBehaviour
     public void Pressed()
     {
 
-        count = count - 1;
+        count += -1;
         ProgressBar.value = count;
 
+        //text shake 
+        frequency += 10;
+        amplitude += 0.1f;
 
+        //sfx
         SoundPitch = SoundPitch + 0.04f;
         Sound.pitch = SoundPitch;
         Sound.Play();
