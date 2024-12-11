@@ -16,7 +16,8 @@ public class LevelStarter : MonoBehaviour
     public GameObject distanceDisplay;
     public int distanCovered;
     private bool addingDistance = false;
-    private bool game = false;
+    private bool game = true;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,5 +80,7 @@ public class LevelStarter : MonoBehaviour
 
         PlayerController.canMove = false;
         winner.SetActive(true);
+        animator.SetBool("PlayerLeft", false);
+        animator.SetBool("PlayerRight", false);
     }
 }
