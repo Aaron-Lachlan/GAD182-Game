@@ -19,10 +19,10 @@ public class ForkliftGameManger : MonoBehaviour
     {
         internalLeft = leftSide;
         internalRight = rightSide;
-        if(PlayerController.canMove == true)
+        /*if(PlayerController.canMove == true)
         {
             Debug.Log("DRIVING");
-        }
+        }*/
 
         if(PlayerController.canMove == false)
         {
