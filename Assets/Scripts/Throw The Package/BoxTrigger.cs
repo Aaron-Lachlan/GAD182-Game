@@ -7,6 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class BoxTrigger : MonoBehaviour
 {
     public GameObject[] boxes;
+    public GameObject box;
     public GameObject scoreDisplay;
     public Transform spawnLocation;
     public int playerScore;
@@ -25,13 +26,14 @@ public class BoxTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Box")
         {
-            boxNum = Random.Range(0, 3);
-            Instantiate(boxes[boxNum], spawnLocation.position, spawnLocation.rotation);
+            //boxNum = Random.Range(0, 3);
+            //Instantiate(boxes[boxNum], spawnLocation.position, spawnLocation.rotation);
+            Instantiate(box, spawnLocation.position, spawnLocation.rotation);
             playerScore += 1;
             scoreDisplay.GetComponent<Text>().text = "" + playerScore;
-            Destroy(other.gameObject, 3f);
+            //Destroy(other.gameObject, 3f);
         }
         Debug.Log(playerScore);
     }
