@@ -7,15 +7,25 @@ using TMPro;
 
 public class PlayerInput : MonoBehaviour
 {
-    public int count = 100;
-   
-    public UnityEngine.UI.Slider ProgressBar;
 
+    //settings
+    public float Timer;
+    public int MaxClicks;
+    private bool gameEnded = false;
+
+    //UI
+    public UnityEngine.UI.Slider ProgressBar;
+    private int count;
+
+
+    //sfx
     private float SoundPitch = 1.0f;
     public AudioSource Sound;
 
-    //text Shake
-    //public TextMeshProUGUI Text;
+    //Timer
+    public TMPro.TextMeshProUGUI TextTimer;
+
+    // Text animation 
     public Transform Text;
     private Vector3 initialPosition;
     private Vector3 directionOfShake = Vector3.up;
@@ -25,22 +35,46 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        count = MaxClicks;
+        ProgressBar.maxValue = MaxClicks;
         ProgressBar.value = count;
 
         initialPosition = Text.position;
 
+
+
     }
-  
+
 
     // Update is called once per frame
     void Update()
     {
 
-        Text.position = initialPosition + directionOfShake * Mathf.PingPong(Time.time * frequency, amplitude * 2f);
-        if (Input.GetKeyDown(KeyCode.Space) == true)
+        if (!gameEnded)
+        {
+            Text.position = initialPosition + directionOfShake * Mathf.PingPong(Time.time * frequency, amplitude * 2f);
+
+        }
+        if (Input.GetKeyDown(KeyCode.Space) == true && !gameEnded)
         {
             Pressed();
+        }
+
+
+        if (count > 0)
+        {
+            Timer += Time.deltaTime;
+            TextTimer.text = Timer.ToString("F2");
+        }
+        else if (!gameEnded)
+        {
+            gameEnded = true;
+            Sound.Pause();
+
+
+
+
+            Debug.Log(1000/Timer);
         }
 
     }
@@ -60,10 +94,6 @@ public class PlayerInput : MonoBehaviour
         Sound.pitch = SoundPitch;
         Sound.Play();
       
-
-
-
-
     }
 
 
