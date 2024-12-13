@@ -10,6 +10,7 @@ public class PlayerPoints : MonoBehaviour
     [SerializeField]
     private PlayerPointSystemSO scoreSO;
     public Timer timerScript;
+    
     [SerializeField]
     public TextMeshProUGUI pointText;
 

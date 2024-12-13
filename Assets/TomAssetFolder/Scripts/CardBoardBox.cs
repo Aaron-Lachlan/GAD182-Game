@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,9 +12,10 @@ public class CardBoardBox : MonoBehaviour
     [SerializeField]
     BoxCollider boxCollider;
     [SerializeField]
-    GameObject winText, loseText;
-    [SerializeField]
-    GameObject helpText;
+    GameObject winText, loseText, helpText;
+
+    
+    
     public AudioSource audiClip;
     public int pointsW = 0;
 
@@ -23,7 +25,8 @@ public class CardBoardBox : MonoBehaviour
     void Start()
     {
         timerScript.GetComponent<TimerTwo>();
-
+        
+        
     }
 
     // Update is called once per frame
@@ -53,7 +56,8 @@ public class CardBoardBox : MonoBehaviour
         {
             winText.SetActive(true);
             timerScript.timerOn = false;
-
+            
+            
         }
         else 
         {
@@ -70,6 +74,7 @@ public class CardBoardBox : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
+
             audiClip.Play();
             animatorOne.SetTrigger("Open 1");
             helpText.SetActive(false);
@@ -77,6 +82,9 @@ public class CardBoardBox : MonoBehaviour
         }
        
     }
+
+   
+
     
     }
 
