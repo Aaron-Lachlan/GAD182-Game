@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
         }
        
         
-        if (GameObject.FindGameObjectsWithTag("Cigarette").Length <= 0)
+        if (GameObject.FindGameObjectsWithTag("Cigarette").Length <= 0 & timeLeft > 0)
         {
             
             paricleSystem.Play();
