@@ -39,10 +39,10 @@ public class LevelStarter : MonoBehaviour
     {
         if (game == true)
         {
-            countdown5.SetActive(true);
-            yield return new WaitForSeconds(1f);
-            countdown4.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            //countdown5.SetActive(true);
+            //yield return new WaitForSeconds(1f);
+            //countdown4.SetActive(true);
+            //yield return new WaitForSeconds(1f);
             countdown3.SetActive(true);
             yield return new WaitForSeconds(1f);
             countdown2.SetActive(true);
