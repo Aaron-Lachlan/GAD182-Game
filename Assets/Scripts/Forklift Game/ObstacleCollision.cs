@@ -12,7 +12,7 @@ public class ObstacleCollision : MonoBehaviour
         thePlayer.GetComponent<PlayerController>().enabled = false;
         PlayerController.canMove = false;
         Debug.Log("Loss");
-        playerAnimator.SetBool("PlayerCrash", true);
+        //playerAnimator.SetBool("PlayerCrash", true);
     }
     
 }

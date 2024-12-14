@@ -51,7 +51,7 @@ public class ThrowObjects : MonoBehaviour
         {
             //Debug.Log("Mouse Button");
             if(grabbedObject == null)
-                TryGrabObject(GetMouseHoverObject(10));
+                TryGrabObject(GetMouseHoverObject(15));
             //else
                 //DropObject();
         }

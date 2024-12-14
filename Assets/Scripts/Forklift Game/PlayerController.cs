@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
+    private BoxCollider boxCollider;
     public Animator animator;
     private Vector3 direction;
     public float forwardSpeed = 3;
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        boxCollider = GetComponent<BoxCollider>();
+        Debug.Log(boxCollider);
         
     }
 
