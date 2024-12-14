@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerInput : MonoBehaviour
 {
 
     //settings
-    public float Timer;
     public int MaxClicks;
     private bool gameEnded = false;
+    public PlayerPointSystemSO scoreSO;
 
     //UI
     public UnityEngine.UI.Slider ProgressBar;
@@ -24,6 +25,7 @@ public class PlayerInput : MonoBehaviour
 
     //Timer
     public TMPro.TextMeshProUGUI TextTimer;
+    public float Timer;
 
     // Text animation 
     public Transform Text;
@@ -72,9 +74,9 @@ public class PlayerInput : MonoBehaviour
             Sound.Pause();
 
 
-
-
-            Debug.Log(1000/Timer);
+            
+            scoreSO.Score += Mathf.RoundToInt(1000/Timer);
+            
         }
 
     }

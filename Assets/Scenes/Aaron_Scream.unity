@@ -1350,11 +1350,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b541bc8250b4d314aba138b18dfb95db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 0
   MaxClicks: 100
+  scoreSO: {fileID: 11400000, guid: cc47af3de31a1bf41ab93dd90e415964, type: 2}
   ProgressBar: {fileID: 1481100535}
   Sound: {fileID: 826132410}
   TextTimer: {fileID: 181632880}
+  Timer: 0
   Text: {fileID: 913127869}
 --- !u!1 &1583559571
 GameObject:
