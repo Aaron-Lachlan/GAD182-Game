@@ -29,11 +29,14 @@ public class PlayerInput : MonoBehaviour
 
     // Text animation 
     public Transform Text;
-    private Vector3 initialPosition;
+    private Vector3 initialPositionTxt;
     private Vector3 directionOfShake = Vector3.up;
     private float amplitude = 0.01f;
     private int frequency = 2;
 
+    //character animation
+    public GameObject Character;
+    private Vector3 initialPositionChr;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +44,7 @@ public class PlayerInput : MonoBehaviour
         ProgressBar.maxValue = MaxClicks;
         ProgressBar.value = count;
 
-        initialPosition = Text.position;
+        initialPositionTxt = Text.position;
 
 
 
@@ -54,8 +57,8 @@ public class PlayerInput : MonoBehaviour
 
         if (!gameEnded)
         {
-            Text.position = initialPosition + directionOfShake * Mathf.PingPong(Time.time * frequency, amplitude * 2f);
-
+            Text.position = initialPositionTxt + directionOfShake * Mathf.PingPong(Time.time * frequency, amplitude * 2f);
+            Character.transform.position = initialPositionChr + Vector3.right * Mathf.PingPong(Time.time * frequency, amplitude * 1.001f);
         }
         if (Input.GetKeyDown(KeyCode.Space) == true && !gameEnded)
         {
