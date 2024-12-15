@@ -4,5 +4,32 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Forklift Game.unity
+    guid: 9a131fd6fec9e7c44b6209115dc10480
+  - enabled: 1
+    path: Assets/Scenes/PackingEquipment.unity
+    guid: 7c8862a03d8177849bad42e0db4a7a16
+  - enabled: 1
+    path: Assets/Scenes/Aaron_Scream.unity
+    guid: b2842b17cc3c15c478677c1d5eece398
+  - enabled: 1
+    path: Assets/Scenes/Scene Cleaner.unity
+    guid: b8555cb876c782c40b49466e4bf7dc10
+  - enabled: 1
+    path: Assets/Scenes/SmokeBreak.unity
+    guid: a5063b9db00df1d47805df91ac82c1bf
+  - enabled: 1
+    path: Assets/Scenes/SceneClickergame.unity
+    guid: db54c2c6d28958d44a614cadaa885147
+  - enabled: 1
+    path: Assets/Scenes/Aaron_Box.unity
+    guid: 78e63517194598546a6484e111f29f29
+  - enabled: 1
+    path: Assets/Scenes/Throw The Package.unity
+    guid: 6ad7b570c9fa8534f87ed5e67de11973
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: 21db226d3a01dec4099de5eabfaa8240
   m_configObjects: {}
