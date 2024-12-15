@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 8d293a7acb0280646a75d5220c126080
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - instructionText: {instanceID: 0}
+  - fadeIn: {instanceID: 0}
+  - countdown3: {instanceID: 0}
+  - countdown2: {instanceID: 0}
+  - countdown1: {instanceID: 0}
+  - go: {instanceID: 0}
+  - reticle: {instanceID: 0}
+  - scoreTotal: {instanceID: 0}
+  - scoreTotalContainer: {instanceID: 0}
+  - scoreTracker: {instanceID: 0}
+  - boxTrigger: {instanceID: 0}
+  - mouseLook: {instanceID: 0}
+  - scoreSO: {fileID: 11400000, guid: cc47af3de31a1bf41ab93dd90e415964, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

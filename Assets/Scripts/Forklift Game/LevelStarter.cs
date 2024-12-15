@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelStarter : MonoBehaviour
 {
     public GameObject instructionText;
+    public GameObject fadeIn;
     public GameObject countdown5;
     public GameObject countdown4;
     public GameObject countdown3;
@@ -14,10 +16,15 @@ public class LevelStarter : MonoBehaviour
     public GameObject go;
     public GameObject winner;
     public GameObject distanceDisplay;
+    public GameObject distanceTracker;
+    public GameObject loserText;
     public int distanCovered;
     private bool addingDistance = false;
     private bool game = true;
+    public bool isWinner = false;
     public Animator animator;
+    [SerializeField]
+    private PlayerPointSystemSO scoreSO;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +49,11 @@ public class LevelStarter : MonoBehaviour
             //countdown5.SetActive(true);
             //yield return new WaitForSeconds(1f);
             //countdown4.SetActive(true);
-            //yield return new WaitForSeconds(1f);
+            distanceTracker.SetActive(true);
+            fadeIn.SetActive(true);
+            yield return new WaitForSeconds(1f);
             countdown3.SetActive(true);
+            instructionText.SetActive(true);
             yield return new WaitForSeconds(1f);
             countdown2.SetActive(true);
             yield return new WaitForSeconds(1f);
@@ -52,8 +62,8 @@ public class LevelStarter : MonoBehaviour
             go.SetActive(true);
             instructionText.SetActive(false);
             PlayerController.canMove = true;
-            countdown5.SetActive(false);
-            countdown4.SetActive(false);
+            //countdown5.SetActive(false);
+            //countdown4.SetActive(false);
             countdown3.SetActive(false);
             countdown2.SetActive(false);
             countdown1.SetActive(false);
@@ -67,20 +77,34 @@ public class LevelStarter : MonoBehaviour
             StartCoroutine(GameTimerSequence());
         }
     }
-    IEnumerator AddingDistance()
+    public IEnumerator AddingDistance()
     {
         distanCovered += 1;
         distanceDisplay.GetComponent<Text>().text = "" + distanCovered;
+        scoreSO.Score += distanCovered;
         yield return new WaitForSeconds(0.5f);
         addingDistance = false;
     }
-    IEnumerator GameTimerSequence()
+    public IEnumerator GameTimerSequence()
     {
         yield return new WaitForSeconds(10f);
-
+        isWinner = true;
+        StartCoroutine(GameComplete());
+    }
+    public IEnumerator GameComplete()
+    {
         PlayerController.canMove = false;
-        winner.SetActive(true);
         animator.SetBool("PlayerLeft", false);
         animator.SetBool("PlayerRight", false);
+        if (isWinner == true)
+        {
+            winner.SetActive(true);
+        }
+        else
+            loserText.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+        Debug.Log("NEXT GAME");
+        //SceneManager.LoadScene(1);
     }
 }

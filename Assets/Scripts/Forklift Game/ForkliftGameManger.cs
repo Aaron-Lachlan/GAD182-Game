@@ -24,9 +24,9 @@ public class ForkliftGameManger : MonoBehaviour
             Debug.Log("DRIVING");
         }*/
 
-        if(PlayerController.canMove == false)
+        /*if(PlayerController.canMove == false)
         {
-            Debug.Log("LOOSER");
-        }
+            //Debug.Log("LOOSER");
+        }*/
     }
 }

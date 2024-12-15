@@ -10,7 +10,7 @@ public class BoxTrigger : MonoBehaviour
     public GameObject box;
     public GameObject scoreDisplay;
     public Transform spawnLocation;
-    public int playerScore;
+    public int deliveredBoxes;
     public int boxNum;
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,13 @@ public class BoxTrigger : MonoBehaviour
     {
         if(other.tag == "Box")
         {
-            //boxNum = Random.Range(0, 3);
-            //Instantiate(boxes[boxNum], spawnLocation.position, spawnLocation.rotation);
-            Instantiate(box, spawnLocation.position, spawnLocation.rotation);
-            playerScore += 1;
-            scoreDisplay.GetComponent<Text>().text = "" + playerScore;
+            boxNum = Random.Range(0, 2);
+            Instantiate(boxes[boxNum], spawnLocation.position, spawnLocation.rotation);
+            //Instantiate(box, spawnLocation.position, spawnLocation.rotation);
+            deliveredBoxes += 1;
+            scoreDisplay.GetComponent<Text>().text = "" + deliveredBoxes;
             //Destroy(other.gameObject, 3f);
         }
-        Debug.Log(playerScore);
+        Debug.Log(deliveredBoxes);
     }
 }

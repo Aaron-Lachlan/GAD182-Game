@@ -12,6 +12,7 @@ public class MouseLook : MonoBehaviour
     [SerializeField][Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
 
     [SerializeField] bool lockCursor = true;
+    public bool canLook = false;
 
     float cameraPitch = 0.0f;
     float velocityY = 0.0f;
@@ -41,32 +42,38 @@ public class MouseLook : MonoBehaviour
 
     void UpdateMouseLook()
     {
-        Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        if(canLook == true)
+        {
+            Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-        currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
+            currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
 
-        cameraPitch -= currentMouseDelta.y * mouseSensitivity;
-        cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
+            cameraPitch -= currentMouseDelta.y * mouseSensitivity;
+            cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
 
-        playerCamera.localEulerAngles = Vector3.right * cameraPitch;
-        transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
+            playerCamera.localEulerAngles = Vector3.right * cameraPitch;
+            transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
+        }
     }
 
     void UpdateMovement()
     {
-        Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        targetDir.Normalize();
+        if(canLook == true)
+        {
+            Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            targetDir.Normalize();
 
-        currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
+            currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
 
-        if(controller.isGrounded)
-            velocityY = 0.0f;
+            if(controller.isGrounded)
+                velocityY = 0.0f;
 
-        velocityY += gravity * Time.deltaTime;
+            velocityY += gravity * Time.deltaTime;
 		
-        Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
+            Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
 
-        controller.Move(velocity * Time.deltaTime);
+            controller.Move(velocity * Time.deltaTime);
+        }
 
     }
 }
