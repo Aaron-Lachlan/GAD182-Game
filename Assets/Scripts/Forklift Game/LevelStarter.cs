@@ -17,10 +17,14 @@ public class LevelStarter : MonoBehaviour
     public GameObject winner;
     public GameObject distanceDisplay;
     public GameObject distanceTracker;
+    public GameObject loserText;
     public int distanCovered;
     private bool addingDistance = false;
     private bool game = true;
+    public bool isWinner = false;
     public Animator animator;
+    [SerializeField]
+    private PlayerPointSystemSO scoreSO;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,21 +77,31 @@ public class LevelStarter : MonoBehaviour
             StartCoroutine(GameTimerSequence());
         }
     }
-    IEnumerator AddingDistance()
+    public IEnumerator AddingDistance()
     {
         distanCovered += 1;
         distanceDisplay.GetComponent<Text>().text = "" + distanCovered;
+        scoreSO.Score += distanCovered;
         yield return new WaitForSeconds(0.5f);
         addingDistance = false;
     }
-    IEnumerator GameTimerSequence()
+    public IEnumerator GameTimerSequence()
     {
         yield return new WaitForSeconds(10f);
-
+        isWinner = true;
+        StartCoroutine(GameComplete());
+    }
+    public IEnumerator GameComplete()
+    {
         PlayerController.canMove = false;
-        winner.SetActive(true);
         animator.SetBool("PlayerLeft", false);
         animator.SetBool("PlayerRight", false);
+        if (isWinner == true)
+        {
+            winner.SetActive(true);
+        }
+        else
+            loserText.SetActive(true);
 
         yield return new WaitForSeconds(5f);
         Debug.Log("NEXT GAME");

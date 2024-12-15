@@ -428,6 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &36836178
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &138388036
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1001 &220205073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -947,6 +950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &220205077
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1622,6 +1626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &274836441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 68bb7784e98e6904089080bc8c9a716f, type: 3}
@@ -1667,6 +1672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &331628278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 68bb7784e98e6904089080bc8c9a716f, type: 3}
@@ -1712,6 +1718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &348855197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,6 +1936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!1 &426709290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,8 +2161,11 @@ MonoBehaviour:
   winner: {fileID: 36836178}
   distanceDisplay: {fileID: 1102260738}
   distanceTracker: {fileID: 428140578}
+  loserText: {fileID: 1858431345}
   distanCovered: 0
+  isWinner: 0
   animator: {fileID: 1556717213}
+  scoreSO: {fileID: 11400000, guid: cc47af3de31a1bf41ab93dd90e415964, type: 2}
 --- !u!4 &432571040
 Transform:
   m_ObjectHideFlags: 0
@@ -2407,6 +2418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &448977856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2552,6 +2564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1001 &588801176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2657,6 +2670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &588801180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2881,6 +2895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &754616088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2926,6 +2941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &770845020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2971,6 +2987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &774114801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3104,6 +3121,108 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
+--- !u!1 &795944522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 795944523}
+  - component: {fileID: 795944526}
+  - component: {fileID: 795944525}
+  - component: {fileID: 795944524}
+  m_Layer: 5
+  m_Name: Loser Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &795944523
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795944522}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1858431346}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -35}
+  m_SizeDelta: {x: 700, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &795944524
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795944522}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: deb0214e4f7be0541bfd8f94bd4abdb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &795944525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795944522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: bad7f3a4b03da964994fa1c0a809c7f9, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 70
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: you crashed!
+--- !u!222 &795944526
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795944522}
+  m_CullTransparentMesh: 1
 --- !u!1001 &817171933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3209,6 +3328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &817171937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3275,6 +3395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &833801838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,6 +3667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &881211818 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 68bb7784e98e6904089080bc8c9a716f, type: 3}
@@ -3591,6 +3713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1001 &887469494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3691,6 +3814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &888918492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4110,6 +4234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1001 &1067871589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4234,6 +4359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &1102260738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4360,6 +4486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1001 &1129267777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5001,6 +5128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &1305598762
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5433,6 +5561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &1367207887
 GameObject:
   m_ObjectHideFlags: 0
@@ -5716,6 +5845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &1383357704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6198,6 +6328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &1519689226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6253,6 +6384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &1581793641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6398,6 +6530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &1629296750 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f872b372af9d84d8c4e1ff1087bc05, type: 3}
@@ -6422,6 +6555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &1629296753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6747,6 +6881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1001 &1735160877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6992,6 +7127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &1751567286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7026,7 +7162,7 @@ GameObject:
   - component: {fileID: 1785737658}
   - component: {fileID: 1785737657}
   m_Layer: 5
-  m_Name: Instruction text
+  m_Name: Winner Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7161,6 +7297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!1 &1816895667
 GameObject:
   m_ObjectHideFlags: 0
@@ -7266,6 +7403,104 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816895667}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1858431345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1858431346}
+  - component: {fileID: 1858431349}
+  - component: {fileID: 1858431348}
+  - component: {fileID: 1858431347}
+  m_Layer: 5
+  m_Name: Loser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1858431346
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858431345}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 795944523}
+  m_Father: {fileID: 1887344780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 700, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1858431347
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858431345}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 14365f79acdbdee4f9de524a82e6e58d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1858431348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858431345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0.90588236}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1858431349
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858431345}
+  m_CullTransparentMesh: 1
 --- !u!1 &1887344776
 GameObject:
   m_ObjectHideFlags: 0
@@ -7369,6 +7604,7 @@ RectTransform:
   - {fileID: 428140579}
   - {fileID: 238832798}
   - {fileID: 36836179}
+  - {fileID: 1858431346}
   - {fileID: 1223224885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7523,6 +7759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1001 &1999149927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7628,6 +7865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &1999149931
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7938,6 +8176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 0}
 --- !u!1 &2089539031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f872b372af9d84d8c4e1ff1087bc05, type: 3}
@@ -7957,6 +8196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 987116704}
   playerAnimator: {fileID: 1556717213}
+  gameTimer: {fileID: 432571039}
 --- !u!65 &2089539036
 BoxCollider:
   m_ObjectHideFlags: 0

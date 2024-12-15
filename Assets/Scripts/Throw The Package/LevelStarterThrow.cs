@@ -20,6 +20,8 @@ public class LevelStarterThrow : MonoBehaviour
     public BoxTrigger boxTrigger;
     public MouseLook mouseLook;
     private int gameTime = 15;
+    [SerializeField]
+    private PlayerPointSystemSO scoreSO;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,8 +77,9 @@ public class LevelStarterThrow : MonoBehaviour
     IEnumerator EndGameSequence()
     {
         mouseLook.canLook = false;
-        scoreTotal.GetComponent<Text>().text = "" + boxTrigger.playerScore;
+        scoreTotal.GetComponent<Text>().text = "" + boxTrigger.deliveredBoxes;
         scoreTotalContainer.SetActive(true);
+        scoreSO.Score += boxTrigger.deliveredBoxes;
 
         yield return new WaitForSeconds(5f);
         Debug.Log("NEXT GAME");
